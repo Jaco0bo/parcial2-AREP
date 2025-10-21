@@ -22,9 +22,16 @@ public class proxyController {
     }
 
     @GetMapping("/proxy/factores")
-    public Object forwardRequest(@RequestParam int value) {
+    public Object forwardFactorRequest(@RequestParam int value) {
         String backendUrl = getNextBackendUrl();
         String url = backendUrl + "/factores?value=" + value;
+        return new RestTemplate().getForObject(url, Object.class);
+    }
+
+    @GetMapping("/proxy/primos")
+    public Object forwardPrimoRequest(@RequestParam int value) {
+        String backendUrl = getNextBackendUrl();
+        String url = backendUrl + "/primos?value=" + value;
         return new RestTemplate().getForObject(url, Object.class);
     }
 
