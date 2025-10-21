@@ -29,7 +29,7 @@ public class backendController {
         return response;
     }
 
-    /**
+
     @GetMapping("/primos")
     public Map<String, Object> primos(@RequestParam String value) {
         Integer m;
@@ -46,5 +46,4 @@ public class backendController {
         response.put("Output", primosList.stream().map(String::valueOf).collect(Collectors.joining(", ")));
         return response;
     }
-    **/
 }

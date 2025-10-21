@@ -8,7 +8,6 @@ public class mathLogic {
         List<String> answer = new ArrayList<>();
         answer.add("1");
         Integer number = n;
-        answer.add(number.toString());
         if (n == 1) {
             return answer;
         }
@@ -20,14 +19,14 @@ public class mathLogic {
             }
             System.out.println(answer);
         }
+        answer.add(number.toString());
         return answer;
     }
 
-    /**
     public static List<String> primos(int n) {
         List<String> answer = new ArrayList<>();
         Integer number = n;
-        for (Integer m ; m <= number; m++) {
+        for (Integer m = 1; m <= number; m++) {
             if (factores(m).size() == 2) {
                 answer.add(m.toString());
             }
@@ -35,7 +34,6 @@ public class mathLogic {
 
         return answer;
     }
-     **/
 }
 
 
