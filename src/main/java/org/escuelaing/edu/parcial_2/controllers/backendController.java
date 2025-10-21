@@ -26,4 +26,23 @@ public class backendController {
         response.put("Output", factoresList.stream().map(String::valueOf).collect(Collectors.joining(", ")));
         return response;
     }
+
+    /**
+    @GetMapping("/primos")
+    public Map<String, Object> primos(@RequestParam String value) {
+        Integer m;
+        try {
+            m = Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException("El valor ingresado no es un numéro, intente nuevamente..");
+        }
+
+        List<String> primosList =mathLogic.primos(m);
+        Map<String, Object> response = new HashMap<>();
+        response.put("Operacion", "Primos de un numero");
+        response.put("Input", m);
+        response.put("Output", primosList.stream().map(String::valueOf).collect(Collectors.joining(", ")));
+        return response;
+    }
+    **/
 }

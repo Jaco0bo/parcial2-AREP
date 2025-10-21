@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form Example</title>
+    <title>Parcial AREP 2</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <h1>Metodo para obtener los factores de un numero n</h1>
 <form action="/factores">
-    <label for="name">Name:</label><br>
     <input type="text" id="factores" name="name" value="Ingrese un valor numérico"><br><br>
-    <input type="button" value="Submit" onclick="loadGetMsg()">
+    <input type="button" value="Submit" onclick="loadGetFac()">
 </form>
 <div id="getrespfac"></div>
+
 <script>
-    function loadGetMsg() {
+    function loadGetFac() {
     let nameVar = document.getElementById("factores").value;
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
     document.getElementById("getrespfac").innerHTML =
     this.responseText;
     }
-    xhttp.open("GET", "/hello?name="+nameVar);
+    xhttp.open("GET", "factores?name="+nameVar);
     xhttp.send();
     }
 </script>
+
 <h1>Metodo para obtener los primos hasta un numero n</h1>
 <form action="/primos">
-    <label for="name">Name:</label><br>
     <input type="text" id="primos" name="name" value="Ingrese un valor numérico"><br><br>
     <input type="button" value="Submit" onclick="loadGetMsg()">
 </form>
-<div id="postrespmsg"></div>
+<div id="postresprim"></div>
+
+
 <script>
     function loadGetMsg() {
     let nameVar = document.getElementById("primos").value;
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
-    document.getElementById("getrespmsg").innerHTML =
+    document.getElementById("postresprim").innerHTML =
     this.responseText;
     }
     xhttp.open("GET", "/hello?name="+nameVar);

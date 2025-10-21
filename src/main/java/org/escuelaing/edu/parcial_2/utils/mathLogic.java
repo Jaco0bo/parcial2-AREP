@@ -6,26 +6,40 @@ import java.util.List;
 public class mathLogic {
     public static List<String> factores(int n) {
         List<String> answer = new ArrayList<>();
-        Integer a = 1;
-        Integer b = 1;
-        answer.add(a.toString());
-        answer.add(b.toString());
+        answer.add("1");
+        Integer number = n;
+        answer.add(number.toString());
         if (n == 1) {
-            answer.remove(1);
             return answer;
         }
         System.out.println(answer);
 
-        for (int i = 3; i <= n; i++) {
-            System.out.println(a);
-            System.out.println(b);
-            Integer c = a + b;
-            System.out.println(c);
-            answer.add(c.toString());
+        for (Integer i = 2; i <= n/2; i++) {
+            if (n % i == 0) {
+                answer.add(i.toString());
+            }
             System.out.println(answer);
-            a = b;
-            b = c;
         }
         return answer;
     }
+
+    public static String primos(int n){
+        List<String> answer = new ArrayList<>();
+
+        Integer number = n;
+        answer.add(number.toString());
+        if (n == 1) {
+            return "1";
+        }
+
+        for (Integer i = 2; i <= n ; i++){
+            if ( i/n == 0  ) {
+                return "probando factores";
+            }
+        }
+
+        return "probando factores";
+    }
 }
+
+
