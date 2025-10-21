@@ -23,23 +23,19 @@ public class mathLogic {
         return answer;
     }
 
-    public static String primos(int n){
+    /**
+    public static List<String> primos(int n) {
         List<String> answer = new ArrayList<>();
-
         Integer number = n;
-        answer.add(number.toString());
-        if (n == 1) {
-            return "1";
-        }
-
-        for (Integer i = 2; i <= n ; i++){
-            if ( i/n == 0  ) {
-                return "probando factores";
+        for (Integer m ; m <= number; m++) {
+            if (factores(m).size() == 2) {
+                answer.add(m.toString());
             }
         }
 
-        return "probando factores";
+        return answer;
     }
+     **/
 }
 
 
